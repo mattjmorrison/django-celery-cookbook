@@ -1,4 +1,5 @@
 define :celery do
+
   name = params[:name]
   virtualenv = params[:virtualenv]
   project = params[:project]

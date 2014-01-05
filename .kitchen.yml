@@ -9,7 +9,7 @@ platforms:
   - name: ubuntu-12.04
 
 suites:
-  - name: celeryd
+  - name: celery
     run_list:
-      - recipe[django_test::default]
+      - recipe[celery_test::default]
     attributes:

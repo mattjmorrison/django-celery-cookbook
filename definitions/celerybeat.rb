@@ -2,7 +2,7 @@ define :celerybeat do
 
   template "/etc/default/celerybeat-#{params[:name]}" do
     source 'celerybeat.conf.erb'
-    cookbook 'django'
+    cookbook 'django-celery'
     mode '0744'
     variables ({
       :project => params[:project],
@@ -12,7 +12,7 @@ define :celerybeat do
 
   template "/etc/init.d/celerybeat-#{params[:name]}" do
     source 'celerybeat.erb'
-    cookbook 'django'
+    cookbook 'django-celery'
     mode '0755'
     variables ({
       :name => params[:name]

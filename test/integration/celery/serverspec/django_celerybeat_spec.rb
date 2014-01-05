@@ -3,7 +3,6 @@ require 'serverspec'
 include Serverspec::Helper::Exec
 include Serverspec::Helper::DetectOS
 
-
 describe file("/etc/default/celerybeat-sample") do
 
   it { should be_file }

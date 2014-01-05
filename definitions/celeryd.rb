@@ -2,7 +2,7 @@ define :celeryd do
 
   template "/etc/default/celeryd-#{params[:name]}" do
     source 'celeryd.conf.erb'
-    cookbook 'django'
+    cookbook 'django-celery'
     mode '0744'
     variables ({
       :project => params[:project],
@@ -12,7 +12,7 @@ define :celeryd do
 
   template "/etc/init.d/celeryd-#{params[:name]}" do
     source 'celeryd.erb'
-    cookbook 'django'
+    cookbook 'django-celery'
     mode '0755'
     variables ({
       :name => params[:name]
