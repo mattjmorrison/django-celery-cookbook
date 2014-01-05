@@ -11,5 +11,5 @@ platforms:
 suites:
   - name: celeryd
     run_list:
-      - recipe[django::celeryd]
+      - recipe[django_test::default]
     attributes:
