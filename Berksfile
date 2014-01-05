@@ -5,5 +5,5 @@ site :opscode
 metadata
 
 group :integration do
-    cookbook "django_test", :path => "./test/cookbooks/django_test"
+  cookbook "celery_test", :path => "./test/cookbooks/celery_test"
 end
