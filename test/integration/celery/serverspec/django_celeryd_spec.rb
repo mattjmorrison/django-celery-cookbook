@@ -1,8 +1,5 @@
 require 'serverspec'
 
-include Serverspec::Helper::Exec
-include Serverspec::Helper::DetectOS
-
 describe file("/etc/default/celeryd-sample") do
 
   it { should be_file }
