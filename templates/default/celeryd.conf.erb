@@ -1,3 +1,6 @@
 CELERYD_CHDIR=<%= @project %>
 ENV_PYTHON=<%= @virtualenv %>/virtualenv/bin/python
 CELERYD_MULTI="$ENV_PYTHON <%= @project %>/manage.py deployed celery multi"
+<% @workername ? name_param = ' -n ' + @workername : name_param = '' %>
+<% @queues.nil? ? queues_param = '' : queues_param = ' -Q ' + @queues.join(',') %>
+CELERYD_OPTS="-c <%= @concurrency ? @concurrency : 0 %><%= name_param %><%= queues_param %>"
