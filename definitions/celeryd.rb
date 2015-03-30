@@ -6,7 +6,10 @@ define :celeryd do
     mode '0744'
     variables ({
       :project => params[:project],
-      :virtualenv => params[:virtualenv]
+      :virtualenv => params[:virtualenv],
+      :concurrency => params[:concurrency],
+      :workername => params[:workername],
+      :queues => params[:queues]
     })
   end
 
