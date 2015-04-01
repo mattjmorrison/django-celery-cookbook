@@ -1,3 +1,3 @@
 CELERYBEAT_CHDIR=<%= @project %>
 ENV_PYTHON=<%= @virtualenv %>/virtualenv/bin/python
-CELERYBEAT=$ENV_PYTHON <%= @project %>/manage.py deployed celery beat
+CELERYBEAT="$ENV_PYTHON <%= @project %>/manage.py deployed celery beat"

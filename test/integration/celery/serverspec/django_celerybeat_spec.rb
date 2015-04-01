@@ -8,7 +8,7 @@ describe file("/etc/default/celerybeat-sample") do
 
   it { should contain "ENV_PYTHON=/dummy/myvirtualenv/virtualenv/bin/python" }
 
-  it { should contain "CELERYBEAT=$ENV_PYTHON /dummy/myproject/manage.py deployed celery beat" }
+  it { should contain 'CELERYBEAT="$ENV_PYTHON /dummy/myproject/manage.py deployed celery beat"' }
 
   it { should be_mode 744 }
 
@@ -34,9 +34,9 @@ describe file("/etc/init.d/celerybeat-sample") do
 
   it { should contain 'DEFAULT_LOG_FILE="/var/log/celery/celerybeat-sample.log"' }
 
-  it { should contain 'CELERY_DEFAULTS=/etc/default/celeryd-sample.conf' }
+  it { should contain 'CELERY_DEFAULTS=/etc/default/celeryd-sample' }
 
-  it { should contain 'CELERYBEAT_DEFAULTS=/etc/default/celerybeat-sample.conf' }
+  it { should contain 'CELERYBEAT_DEFAULTS=/etc/default/celerybeat-sample' }
 
   it { should contain "exit 0" }
 
