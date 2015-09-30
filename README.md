@@ -1,3 +1,5 @@
+This is obsolete. 
+
 django-celery cookbook
 ======================
 
